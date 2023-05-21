@@ -37,8 +37,6 @@ function initTimer() {
         cargar_localstorage();
         tablita();
         info_puntuacion.style.display = 'block';
-
-
         let points = puntuacion_maxima*(timeLeft/maxTime)
         document.querySelector(".puntaje span").innerHTML = Math.round(points)+" puntos";
 
@@ -106,12 +104,6 @@ function clicking(){
         
 
     for(let i =0; i<card.length; i++){
-        front[i].classList.add('show')
-
-        setInterval(() => {
-            
-            front[i].classList.remove('show')
-        }, 1000);
 
         card[i].addEventListener('click' ,()=>{
         
