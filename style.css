@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #f2f2f2;
+  }
+
+  .info-puntaje .tabla {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    left: 50%;
+    width: 50%;
+    height: 30%;
+    border-radius: 10px;
+    line-height: 300%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    padding: 2% ;   
+    }
+
+
+   .info-puntaje .tabla .titulo{
+    color: black;
+    font-family: "Press Start 2P";
+    font-size:medium;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+  .info-puntaje .tabla .titulo span{
+    display: flex;
+    text-align: center;}
+
+  .info-puntaje .tabla .info p{
+    display: flex;
+    text-align: center;;
+  }
+  
+  .info-puntaje .tabla .info{
+    color: black;
+    font-family: "Press Start 2P";
+    font-size:small;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+  .info-puntaje .puntaje{
+    font-family: "Press Start 2P";
+    color: black;
+    font-size:small;
+    align-items: center;
+    display: block;
+    text-align: center;
+    padding: 5%;    
+    font-size:300%;
+  }
+
+  .control-buttons p{
+    font-family: "Press Start 2P";
+    display: block;
+    text-align: center;
+    padding: 5%;    
+    font-size: 150%;
+    line-height: 150%;
+  }
+  
+  .info-puntaje .back span{
+    font-family: "Press Start 2P";
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    background-color: #F44336;
+    color: #FFF;
+    padding: 15px 25px;
+    font-size: 100%;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+
+  .info-puntaje{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 178, 45, 0.712);
+    display: none;
+  }
+
+  .control-buttons {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 148, 60, 0.98);
+  }
+
+  .head {
+    border: 2px solid #a6a6a6;
+    margin: auto;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Press Start 2P";
+    color: #FF8C42;
+  }
+
+  .control-buttons span {
+    font-family: "Press Start 2P";
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #F44336;
+    color: #FFF;
+    padding: 15px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .info-container .name {
+    float: left;
+    width: 50%;
+  }
+
+  .info-container {
+    max-width: 480px;
+    font-family: "Press Start 2P";
+    margin: 1% auto ;
+    background-color: #F6F6F6;
+    padding: 1%;
+    font-size: 80%;
+    overflow: hidden;
+    border: 2px solid #a6a6a6;
+  }
+
+  .info-container .name {
+    float: left;
+    width: 50%;
+  }
+
+  .info-container .timer {
+  float: right;
+  width: 50%;
+  text-align: right;
+  }
+
+
+  .head h2{
+    font-size: 200%;
+  }
+  
+  
+  .container {
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    margin: auto;
+    padding: 5%;
+  }
+
+
+  
+  .cell div {
+    height: 130px;
+    border-radius: 4px;
+  }
+  
+  .cell {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FF8C42;
+    background-color: #f2f2f2;
+    transform: rotateY(90deg);
+  }
+  
+  .back {
+    background-color: #FF8C42;
+  }
+  
+  img {
+    height: 75%;
+    width: 75%;
+  }
+  
+  .flip {
+    transform: rotateY(0deg);
+  }
+  .match {
+    transform: rotateY(0deg);
+  }
+  
+  .show {
+    transform: rotateY(0deg);
+  }
+  
+  @media screen and (min-width: 770px) {
+    .head {
+      max-width: 760px;
+    }
+
+    .info-container {
+        max-width: 760px;
+      }
+    
+    .container {
+      grid-template-columns: repeat(4, auto);
+    }
+  
+    .cell div {
+      height: 170px;
+    }
+
+  }
+
+
