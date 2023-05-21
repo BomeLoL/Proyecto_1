@@ -8,7 +8,7 @@ refreshBtn = document.querySelector(".back span");
 
 
 
-let maxTime = 2;
+let maxTime = 180;
 let timeLeft = maxTime;
 let matchedCard = 0;    
 let isPlaying = false;
@@ -247,7 +247,7 @@ function cargar_localstorage(){
     if(data!=null){
         lista=JSON.parse(localStorage.getItem("lista"));
     }
-
+    
 }
 
 function tablita(){
