@@ -16,6 +16,7 @@ let usuario="";
 let lista = [];
 let espera = true;
 let disable = false;
+const cards=16; 
 
 
 const puntuacion_maxima = 1000
@@ -105,38 +106,58 @@ function clicking(){
 
     for(let i =0; i<card.length; i++){
 
-        card[i].addEventListener('click' ,()=>{
-        
-         front[i].classList.add('flip')
-           const filppedCard = document.querySelectorAll('.flip')
+        let cb = () => {
+            front[i].classList.add('flip')
+            const filppedCard = document.querySelectorAll('.flip')
+ 
+             if(filppedCard.length == 2){
+                 espera = true;
+                 container.style.pointerEvents ='none';
 
-            if(filppedCard.length == 2){
-                espera = true;
-                container.style.pointerEvents ='none'
-                match(filppedCard[0] , filppedCard[1])
-                if(espera==false){
-                    setTimeout(() => {
-                    
-                    container.style.pointerEvents ='all'
-                }, 500);
-
+                 match(filppedCard[0] , filppedCard[1])
+                 if(espera==false){
+                     setTimeout(() => {
+                     
+                     container.style.pointerEvents ='all'
+                 }, 500);
+ 
+             }
+ 
+             if (disable == true){
+                let y=0;
+                while (y<card.length){
+                    console.log(front[i])
+                    console.log(front[y])
+                    if (i!=y){
+  
+                    if(front[i].dataset.index == front[y].dataset.index){
+                        card[i].removeEventListener('click',cb);
+                        card[y].removeEventListener('click',cb);
+                    }}
+                    y++;
+                }
             }
 
-            }
+            };
 
-        })
 
-    }
+        };
 
-}
+
+        card[i].addEventListener('click', cb);
+
+    }}
+
 
 
 
 
 function match(cardOne , cardTwo){
-                
+    disable=false;
     if (timeLeft!=0){
     if(cardOne.dataset.index == cardTwo.dataset.index){
+        disable=true;
+
 
         matchedCard++;
         if(matchedCard == 8 && timeLeft > 0) {
